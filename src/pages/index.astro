@@ -1,0 +1,45 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { formatDate } from '../utils';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+---
+
+<Base>
+  <h1>Justin Zhang</h1>
+
+  <p>
+    Software engineer. I write here about things I've built, things I've broken, and
+    things I'm still figuring out.
+  </p>
+
+  <p>
+    See <a href="/projects">projects</a> for what I've made, or the posts below. You can
+    reach me by <a href="mailto:ju5tinz.engineer@gmail.com">email</a>.
+  </p>
+
+  <h2>Writing</h2>
+
+  {
+    posts.length === 0 ? (
+      <p class="muted">Nothing published yet.</p>
+    ) : (
+      <ul class="entries">
+        {posts.map((post) => (
+          <li>
+            <div>
+              <span class="title">
+                <a href={`/blog/${post.id}`}>{post.data.title}</a>
+              </span>
+              <span class="meta"> · {formatDate(post.data.date)}</span>
+            </div>
+            {post.data.description && <p class="summary">{post.data.description}</p>}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Base>
