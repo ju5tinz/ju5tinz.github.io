@@ -42,3 +42,7 @@ Generating individual audio stems brings AI generation back into a traditional p
 Imagine an LLM generating MIDI sequences mapped directly into a DAW. For your synthesizer parts, the MIDI simply triggers existing plugins. But for complex, acoustic elements that are hard to synthesize the system passes that specific MIDI data alongside a text prompt to an audio diffusion model, which renders just that isolated stem.
 
 This hybrid approach shifts AI from being an autonomous black box that replaces the artist, to a tool that can act as a collaborator in the music production process.
+
+---
+
+<p class="muted">Written by me, revised with the help of AI.</p>

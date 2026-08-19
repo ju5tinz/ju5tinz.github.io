@@ -191,6 +191,30 @@ td {
   text-align: left;
 }
 
+/* ---- audio & downloads ---- */
+
+audio {
+  display: block;
+  width: 100%;
+  margin: 0.75rem 0;
+}
+
+figure {
+  margin: 1.75rem 0;
+}
+
+figcaption {
+  color: var(--muted);
+  font-size: 0.875rem;
+  margin-top: 0.4rem;
+}
+
+.download {
+  display: inline-block;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
 /* ---- entry lists (blog index, projects) ---- */
 
 .entries {

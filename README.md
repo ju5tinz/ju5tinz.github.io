@@ -31,6 +31,47 @@ Post body here.
 Set `draft: true` to keep a post out of the build. Posts are sorted newest-first
 on `/` and `/blog`, and flow into `/rss.xml` automatically.
 
+## Adding audio and project files
+
+Large binaries live in `public/`, not `src/`. Astro's asset pipeline processes
+images but passes audio and `.als` files through untouched, and `public/` keeps
+their URLs stable and predictable.
+
+One folder per post, matching its slug:
+
+```
+public/media/<post-slug>/
+  audio/     .mp3 / .m4a for streaming, .wav for downloads
+  ableton/   zipped Ableton project folders
+```
+
+A file at `public/media/beyond-the-waveform/audio/demo.mp3` is served at
+`/media/beyond-the-waveform/audio/demo.mp3`. Reference it from markdown with a
+root-relative path — raw HTML works inside `.md`, no plugin needed:
+
+```html
+<figure>
+  <audio controls preload="none" src="/media/beyond-the-waveform/audio/demo.mp3"></audio>
+  <figcaption>Hybrid architecture, rendered stem.</figcaption>
+</figure>
+```
+
+`preload="none"` matters — without it every clip on the page starts downloading
+on load. For Ableton, zip the whole project folder (the `.als` alone is useless
+without its `Samples/` directory) and link it:
+
+```html
+<p class="download">
+  <a href="/media/beyond-the-waveform/ableton/demo-project.zip">Download the Ableton project (14 MB)</a>
+</p>
+```
+
+Keep an eye on size: GitHub rejects any file over 100 MB, warns past 50 MB, and
+Pages is meant for sites under 1 GB with a 100 GB/month bandwidth soft limit.
+Export compressed audio for anything embedded inline, and reserve `.wav` for
+files people explicitly download. If the repo starts filling up with large
+sources, move them to Git LFS or host them off-repo and link out.
+
 ## Adding a project
 
 Edit the `projects` array at the top of `src/pages/projects.astro`. Only `name`
