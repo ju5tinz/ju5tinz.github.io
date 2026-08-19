@@ -1,7 +1,7 @@
 ---
-title: 'Beyond the Waveform: Why the Future of AI Music Generation Is a Hybrid Approach'
-date: 2026-08-17
-description: 'End-to-end text-to-audio models bypass the strengths of LLMs and struggle with structural coherence. A case for a hybrid architecture instead: LLM as composer, specialized synthesis engines as performers.'
+title: 'On AI Music Production'
+date: 2026-08-19
+description: 'A case for a different kind of generative AI for music production.'
 draft: false
 ---
 
