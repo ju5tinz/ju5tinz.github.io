@@ -2,7 +2,7 @@
 title: 'Hello world'
 date: 2026-08-11
 description: 'A placeholder post that doubles as a formatting reference.'
-draft: false
+draft: true
 ---
 
 This is a placeholder post. Delete it, or edit it into something real — it lives at
