@@ -5,6 +5,30 @@ description: 'A case for a different kind of generative AI for music production.
 draft: false
 ---
 
+## Two examples
+
+Both tracks below were made with the approach this post argues for: the composition
+was generated as symbolic data — tempo, chords, quantized rhythms, note velocities —
+and then rendered through instruments in Ableton, rather than produced as raw audio
+by an end-to-end model. The Ableton projects are included so you can open the MIDI
+and see exactly what was generated.
+
+<figure>
+  <audio controls preload="none" src="/media/beyond-the-waveform/audio/hip-hop.mp3"></audio>
+  <figcaption>
+    Hip hop sketch, 0:58 &middot;
+    <a href="/media/beyond-the-waveform/ableton/hip-hop-project.zip">Ableton project (129&nbsp;KB)</a>
+  </figcaption>
+</figure>
+
+<figure>
+  <audio controls preload="none" src="/media/beyond-the-waveform/audio/sci-fi.mp3"></audio>
+  <figcaption>
+    Sci-fi cue, 1:00 &middot;
+    <a href="/media/beyond-the-waveform/ableton/sci-fi-project.zip">Ableton project (181&nbsp;KB)</a>
+  </figcaption>
+</figure>
+
 The conversation around AI music generation has recently been entirely dominated by end-to-end, text-to-audio models. You type a prompt, and the system spits out a fully formed, highly complex audio waveform. While this is an incredibly interesting task to explore, this brute-force method carries major drawbacks.
 
 For one, it completely bypasses the strengths of foundational Large Language Models (LLMs) and leaves actual musicians with an uneditable, uninterpretable final product. It is time to rethink this architecture. Instead of generating raw audio, we should be using LLMs to generate music through existing, modular production tools.
